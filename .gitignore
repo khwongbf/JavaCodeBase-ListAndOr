@@ -333,3 +333,6 @@ application.windows32
 application.windows64
 application.macosx
 
+.gitignore
+.idea/
+List And Or.iml

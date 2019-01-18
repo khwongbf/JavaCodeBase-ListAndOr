@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -21,8 +20,7 @@ public class ListOperators {
             return returnStream.distinct()
                     .collect(Collectors.toList());
         }else {
-            for (int i = 0; i < listArrayList.size(); i++){
-                List<E> currentList = listArrayList.get(i);
+            for (var currentList : listArrayList) {
                 returnStream = returnStream.distinct()
                         .filter(currentList::contains);
             }
@@ -37,8 +35,8 @@ public class ListOperators {
         }else {
             ArrayList<Stream<E>> streamList = new ArrayList<>();
 
-            for (int i = 0; i < multipleLists.length; i++){
-                streamList.add(multipleLists[i].stream());
+            for (var multipleList : multipleLists) {
+                streamList.add(multipleList.stream());
             }
             return streamList
                     .parallelStream()
